@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 'use client'
 
 import { useRef, useState } from "react"
@@ -7,6 +6,7 @@ import { anton } from "@/constants/tipography"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Image from "next/image"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -129,10 +129,12 @@ const MarqueeRow = ({
                     key={`${imagen.id}-${direction}-${index}`}
                     className="group relative w-72 h-96 shrink-0 rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 transition-all duration-500 hover:scale-95 hover:border-violet-500/50 cursor-pointer"
                 >
-                    <img
+                    <Image
                         src={imagen.src}
                         alt={imagen.alt}
-                        className="object-cover w-full h-full transition-transform duration-700 grayscale group-hover:grayscale-0 group-hover:scale-110"
+                        fill
+                        unoptimized
+                        className="object-cover transition-transform duration-700 grayscale group-hover:grayscale-0 group-hover:scale-110"
                         sizes="(max-width: 768px) 100vw, 300px"
                     />
                     
@@ -205,9 +207,9 @@ const Galeria = () => {
                 {/* Gradient Masks (Laterales) */}
                 <div className="absolute left-0 top-0 bottom-0 w-20 bg-linear-to-r from-[#020617] via-[#020617]/80 to-transparent z-30 pointer-events-none" />
                 <div className="absolute right-0 top-0 bottom-0 w-20 bg-linear-to-l from-[#020617] via-[#020617]/80 to-transparent z-30 pointer-events-none" />
-
+                
                 <div 
-                    className="flex flex-col gap-6 py-10 bg-white/5 border-y border-white/5 backdrop-blur-[2px]"
+                    className="flex flex-col gap-6 py-10 bg-violet-600/5 border-y border-white/20 backdrop-blur-sm"
                     onMouseEnter={() => setIsPaused(true)}
                     onMouseLeave={() => setIsPaused(false)}
                 >

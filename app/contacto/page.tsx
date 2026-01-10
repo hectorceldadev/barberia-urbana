@@ -6,19 +6,18 @@ export const metadata: Metadata = {
     description: "Reserva tu cita en Celda Barber Silla. Teléfono, dirección, horario y formulario de contacto. Estamos en Av. Luís Vives 14.",
     keywords: ["Contacto Barbería Silla", "Teléfono Celda Barber", "Dirección Peluquería Silla", "Cita Previa Barbería"],
     openGraph: {
-        title: "Contacta con Celda Barber",
+        title: "Contacto - Celda Barber",
         description: "Reserva tu hueco. Estamos en el corazón de Silla (Valencia).",
         url: 'https://celdabarber.com/contacto',
         images: [
             {
-                url: '/images/og-contacto.jpg', // Foto del local por fuera sería ideal aquí
+                url: '/images/twitter-card.png',
                 width: 1200,
                 height: 630,
                 alt: 'Fachada Celda Barber Silla',
             }
         ],
-    },
-    icons: '/images/logo-celdabarber.svg'
+    }
 }
 const page = () => {
 

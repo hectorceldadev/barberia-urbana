@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 'use client'
 
 import Link from "next/link"
@@ -8,6 +7,7 @@ import { useRef } from "react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import gsap from 'gsap';
 import { anton, geist } from "@/constants/tipography"
+import Image from "next/image"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -142,10 +142,12 @@ const Hero = () => {
                             ref={imageRef}
                             className="relative aspect-3/4 rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900 shadow-2xl shadow-black/50"
                         >
-                            <img
+                            <Image
                                 src="/images/hero-celdabarber.svg"
                                 alt="Peluquería masculina y barbería en Silla especializada en Fades y cortes modernos"
-                                className="object-cover w-full h-full"
+                                fill
+                                unoptimized
+                                className="object-cover"
                             />
 
                             {/* Overlay */}

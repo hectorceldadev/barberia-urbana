@@ -1,8 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 'use client'
 
 import { REVIEWS } from "@/constants/reviews"
-import { Star, Quote } from "lucide-react"
+import { Star, Quote, User } from "lucide-react"
 import { anton } from "@/constants/tipography"
 import { useGSAP } from "@gsap/react"
 import { useRef, useState } from "react"
@@ -123,11 +122,7 @@ export const Reviews = () => {
                             {/* USUARIO */}
                             <div className="flex items-center gap-4 pt-4 border-t border-white/20">
                                 <div className="relative w-12 h-12 shrink-0 rounded-full overflow-hidden border border-zinc-700">
-                                    <img
-                                        src={review.img}
-                                        alt={review.name}
-                                        className="object-cover w-full h-full"
-                                    />
+                                    <User color="gray" className="object-cover w-full h-full p-2"/>
                                 </div>
                                 <div>
                                     <h4 className={`text-white text-lg leading-none mb-1 uppercase ${anton.className}`}>

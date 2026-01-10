@@ -11,14 +11,13 @@ export const metadata: Metadata = {
     url: 'https://celdabarber.com/galeria',
     images: [
       {
-        url: '/images/og-galeria.jpg', // Una foto collage de varios cortes quedaría genial aquí
+        url: '/images/twitter-card.png',
         width: 1200,
         height: 630,
         alt: 'Colección de cortes Celda Barber',
       }
     ],
-  },
-  icons: '/images/logo-celdabarber.svg'
+  }
 };
 
 const page = () => {

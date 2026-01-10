@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 'use client'
 
 import { useRef, useState } from "react"
@@ -8,6 +7,7 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ArrowUpRight } from "lucide-react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Image from "next/image"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -23,7 +23,7 @@ const Galeria = () => {
     useGSAP(() => {
 
         gsap.from('.animate-header', {
-            y: 40, 
+            y: 40,
             duration: 0.4,
             stagger: 0.2,
             opacity: 0,
@@ -41,13 +41,13 @@ const Galeria = () => {
 
         if (!sliderRef.current) return
 
-        animationRef.current = 
-        gsap.to(sliderRef.current, {
-            xPercent: -50,
-            duration: 20,
-            ease: 'none',
-            repeat: -1,
-        })
+        animationRef.current =
+            gsap.to(sliderRef.current, {
+                xPercent: -50,
+                duration: 20,
+                ease: 'none',
+                repeat: -1,
+            })
 
         return () => {
             animationRef.current?.kill()
@@ -59,9 +59,9 @@ const Galeria = () => {
 
         if (animationRef.current) {
             isPaused ? animationRef.current.timeScale(0.2) : animationRef.current.timeScale(1)
-        } 
+        }
 
-    }, [ isPaused ])
+    }, [isPaused])
 
     return (
         <section ref={containerRef} className="w-full py-6 bg-[#020617] overflow-hidden relative">
@@ -100,11 +100,13 @@ const Galeria = () => {
                                     key={`${imagen.id}-${index}`}
                                     className="group relative w-72 h-96 shrink-0 rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 transition-all duration-500 hover:scale-110 hover:border-violet-500/50 cursor-pointer"
                                 >
-                                    
-                                    <img
+
+                                    <Image
                                         src={imagen.src}
                                         alt={imagen.alt}
-                                        className={`object-cover w-full h-full transition-transform duration-700 ${isPaused ? 'garyscale-0' : 'grayscale'} group-hover:scale-105`}
+                                        fill
+                                        unoptimized 
+                                        className="object-cover transition-transform duration-700 grayscale group-hover:grayscale-0 group-hover:scale-110"
                                         sizes="(max-width: 768px) 100vw, 300px"
                                     />
 

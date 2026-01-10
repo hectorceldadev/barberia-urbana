@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+
 'use client'
 
 import { useRef, useState } from 'react'
@@ -7,6 +7,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { anton, geist } from '@/constants/tipography'
 import { Scissors, Users, Trophy, Star } from 'lucide-react'
+import Image from 'next/image'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -215,10 +216,12 @@ export const SobreNosotros = () => {
                     <div className="col-span-1 animate-image">
                         {/* Centramos la imagen horizontalmente en su columna */}
                         <div className="relative aspect-4/5 w-[90%] md:w-[70%] mx-auto rounded-3xl overflow-hidden border border-white/10 group">
-                            <img
+                            <Image
                                 src="/images/sobre-nosotros.svg"
                                 alt="Interior de Celda Barber"
-                                className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                                fill
+                                unoptimized
+                                className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                             />
                             {/* Overlay degradado */}
                             <div className="absolute inset-0 bg-linear-to-t from-[#020617] via-transparent to-transparent opacity-80" />
@@ -273,10 +276,12 @@ export const SobreNosotros = () => {
 
                                 {/* CORRECCIÓN AQUÍ: Añadido 'w-72' (o w-full) para móvil */}
                                 <div className="aspect-2/3 w-72 md:w-[30%] relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 animate-crew">
-                                    <img
+                                    <Image
                                         src={member.image}
                                         alt={member.name}
-                                        className="object-cover w-full h-full transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
+                                        fill
+                                        unoptimized
+                                        className="object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
                                     />
 
                                     {/* Info Overlay */}

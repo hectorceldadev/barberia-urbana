@@ -11,14 +11,13 @@ export const metadata: Metadata = {
         url: 'https://celdabarber.com/servicios',
         images: [
             {
-                url: '/images/logo-celdabarber.svg', // Idealmente una foto de alguien cortando el pelo o la lista de precios
+                url: '/images/twitter-card.png', // Idealmente una foto de alguien cortando el pelo o la lista de precios
                 width: 1200,
                 height: 630,
                 alt: 'Servicios Celda Barber',
             }
         ],
     },
-    icons: '/images/logo-celdabarber.svg'
 };
 
 const page = () => {

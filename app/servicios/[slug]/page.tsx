@@ -30,14 +30,18 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
             description: service.description,
             type: 'article',
             url: `https://celdabarber.es/servicios/${service.slug}`,
-            images: [{ url: '/images/logo-celdabarber.svg' }]
+            images: [{ 
+                url: '/images/twitter-card.png',
+                width: 1200,
+                height: 630,
+                alt: `Celda Barber`, 
+            }]
         },
         twitter: {
             card: 'summary_large_image',
             title: service.title,
             description: service.description,
-        },
-        icons: '/images/logo-celdabarber.svg'
+        }
     }
 }
 
