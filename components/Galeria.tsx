@@ -47,10 +47,22 @@ const Galeria = () => {
                 duration: 20,
                 ease: 'none',
                 repeat: -1,
+                paused: true
             })
+
+        ScrollTrigger.create({
+            trigger: containerRef.current,
+            start: 'top 80%',
+            end: 'bottom 0%',
+            onEnter: () => animationRef.current?.play(),
+            onLeave: () => animationRef.current?.pause(),
+            onEnterBack: () => animationRef.current?.play(),
+            onLeaveBack: () => animationRef.current?.pause()
+        })
 
         return () => {
             animationRef.current?.kill()
+            ScrollTrigger.getAll().forEach(t => t.kill())
         }
 
     }, { scope: sliderRef })

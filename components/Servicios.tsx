@@ -143,7 +143,7 @@ const Servicios = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <ArrowRight className='group-hover:text-violet-500 group-hover:translate-x-2 transition-all duration-300' />
+                                    <ArrowRight color='white' className='group-hover:text-violet-500 group-hover:translate-x-2 transition-all duration-300' />
                                 </div>
                             </div>
                         </Link>

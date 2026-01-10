@@ -40,19 +40,28 @@ export const Reviews = () => {
 
         if (!sliderRef.current) return
 
-        gsap.set(sliderRef.current, {
-            xPercent: -50
-        })
+        animateRef.current =
+            gsap.to(sliderRef.current, {
+                xPercent: -50,
+                duration: 20,
+                ease: 'none',
+                repeat: -1,
+                paused: true
+            })
 
-        animateRef.current = gsap.to(sliderRef.current, {
-            xPercent: 0,
-            repeat: -1,
-            duration: 100,
-            ease: 'none',
+        ScrollTrigger.create({
+            trigger: containerRef.current,
+            start: 'top 80%',
+            end: 'bottom 0%',
+            onEnter: () => animateRef.current?.play(),
+            onLeave: () => animateRef.current?.pause(),
+            onEnterBack: () => animateRef.current?.play(),
+            onLeaveBack: () => animateRef.current?.pause()
         })
 
         return () => {
             animateRef.current?.kill()
+            ScrollTrigger.getAll().forEach(t => t.kill())
         }
 
     }, { scope: containerRef })

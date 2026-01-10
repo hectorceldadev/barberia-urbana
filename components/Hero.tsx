@@ -17,24 +17,32 @@ const Hero = () => {
     const imageRef = useRef(null)
 
     useGSAP(() => {
-        // Animación de entrada
+
         gsap.from('.animate-hero', {
             y: 40,
-            opacity: 0,
-            stagger: 0.2, 
-            duration: 0.8,
-            ease: 'power3.out'
-        })
-
-        gsap.from('.hero-image-container', {
-            scale: 0.95,
-            opacity: 0,
             duration: 1,
-            ease: 'power3.out',
-            delay: 0.2
+            stagger: 0.2,
+            opacity: 0,
+            ease: 'power2.out'
         })
 
-        // Parallax SOLO en Desktop (> 1024px)
+        gsap.from('.animate-hero-image', {
+            y: 40,
+            duration: 1,
+            stagger: 0.5,
+            opacity: 0,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.animate-hero-image',
+                start: 'top 80%',
+                toggleActions: 'play none none reverse'
+            }
+        })
+
+    }, { scope: containerRef })
+
+    useGSAP(() => {
+
         if (window.innerWidth > 1024) {
             const xTo = gsap.quickTo(imageRef.current, 'x', { duration: 0.4, ease: 'power3' })
             const yTo = gsap.quickTo(imageRef.current, 'y', { duration: 0.4, ease: 'power3' })
@@ -68,13 +76,13 @@ const Hero = () => {
 
                         {/* Etiqueta / Ubicación (SEO LOCAL: Silla) */}
                         <div className="flex justify-start">
-                            <div className="animate-hero inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-300 text-[10px] sm:text-xs font-bold tracking-widest uppercase">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-300 text-[10px] sm:text-xs font-bold tracking-widest uppercase animate-hero">
                                 <MapPin size={12} className="text-violet-500" />
                                 Peluquería en Silla • Est. 2026
                             </div>
                         </div>
 
-                        <h1 className={`${anton.className} text-[56px] sm:text-6xl font-black text-white leading-[0.95] mb-6 animate-hero uppercase tracking-tight`}>
+                        <h1 className={`${anton.className} text-[56px] sm:text-6xl font-black text-white leading-[0.95] mb-6 animate-hero uppercase tracking-tight animate-hero`}>
                             El Fade  <br />
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-violet-500 to-violet-300 ">
                                 Definitivo
@@ -82,14 +90,14 @@ const Hero = () => {
                         </h1>
 
                         {/* Párrafo con Keywords SEO (Fades, Cortes, Streetwear) */}
-                        <p className="text-base sm:text-lg text-zinc-400 mb-8 sm:mb-10 leading-relaxed max-w-lg mx-auto lg:mx-0 animate-hero font-medium">
+                        <p className="text-base sm:text-lg text-zinc-400 mb-8 sm:mb-10 leading-relaxed max-w-lg mx-auto lg:mx-0 font-medium animate-hero">
                             La nueva referencia de <strong className="text-zinc-200">peluquería masculina en Silla</strong>.
                             Especialistas en fades, diseños y arreglo de barba.
                             Tu sitio de confianza a solo 5 minutos de <strong className="text-zinc-200">Picassent, Albal y Catarroja</strong>.
                         </p>
 
                         {/* Botones: Ancho completo en móvil (w-full) */}
-                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-hero w-full sm:w-auto">
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-hero w-full sm:w-auto animate-hero">
                             <Link
                                 href="https://wa.me/34600877977?text=Hola%20Celda%20Barber,%20me%20gustaría%20pedir%20cita." //**PONER WHATSSAP
                                 target="_blank"
@@ -134,13 +142,13 @@ const Hero = () => {
 
                     {/* COLUMNA IMAGEN */}
                     {/* Móvil: w-full (para ocupar todo el ancho disponible). Desktop: controlado por el grid */}
-                    <div className="relative mx-auto w-[90%] lg:w-[70%] hero-image-container mt-4 lg:pt-2">
+                    <div className="relative mx-auto w-[90%] lg:w-[70%] mt-4 lg:pt-2">
                         {/* Decoración */}
                         <div className="absolute -inset-4 bg-violet-600/20 rounded-3xl rotate-6 blur-md hidden sm:block"></div>
 
                         <div
                             ref={imageRef}
-                            className="relative aspect-3/4 rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900 shadow-2xl shadow-black/50"
+                            className="relative aspect-3/4 rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900 shadow-2xl shadow-black/50 animate-hero-image"
                         >
                             <Image
                                 src="/images/hero-celdabarber.svg"
@@ -154,7 +162,7 @@ const Hero = () => {
                             <div className="absolute inset-0 bg-linear-to-t from-[#020617] via-transparent to-transparent opacity-60" />
 
                             {/* Badge Flotante - Ajustado para no tapar en móvil */}
-                            <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-white/10 backdrop-blur-md border border-white/20 p-2 sm:p-3 rounded-xl flex items-center gap-2 sm:gap-3">
+                            <div className="absolute z-50 bottom-4 right-4 sm:bottom-4 sm:right-4 bg-white/10 backdrop-blur-md border border-white/20 p-2 sm:p-3 rounded-xl flex items-center gap-2 sm:gap-3 animate-hero-image">
                                 <div className="bg-violet-600 p-1.5 sm:p-2 rounded-lg text-white">
                                     <Scissors size={16} className="sm:w-5 sm:h-5" />
                                 </div>

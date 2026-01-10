@@ -244,7 +244,7 @@ export const SobreNosotros = () => {
                         className="flex w-max gap-8  overflow-hidden"
                     >
                         {duplicatedStats.map((stat, idx) => (
-                            <div key={idx} className="bg-zinc-900 shrink-0 whitespace-nowrap ring w-60 ring-white/20 p-6 rounded-2xl text-center hover:bg-zinc-900/90 transition-colors group">
+                            <div key={idx} className="bg-zinc-900 shrink-0 whitespace-nowrap border w-60 border-white/20 p-6 rounded-2xl text-center hover:bg-zinc-900/90 transition-colors group">
                                 <div className="inline-flex p-3 rounded-full bg-violet-600/10 text-violet-500 mb-4 group-hover:scale-110 transition-transform">
                                     <stat.icon size={24} />
                                 </div>
