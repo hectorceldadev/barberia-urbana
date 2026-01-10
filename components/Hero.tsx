@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 
-import Image from "next/image"
 import Link from "next/link"
 import { CalendarDays, ArrowRight, Star, Scissors, User, MapPin } from "lucide-react"
 import { useGSAP } from "@gsap/react"
@@ -21,7 +21,7 @@ const Hero = () => {
         gsap.from('.animate-hero', {
             y: 40,
             opacity: 0,
-            stagger: 0.1, // Un poco más rápido para sensación de agilidad
+            stagger: 0.2, 
             duration: 0.8,
             ease: 'power3.out'
         })
@@ -91,7 +91,7 @@ const Hero = () => {
                         {/* Botones: Ancho completo en móvil (w-full) */}
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-hero w-full sm:w-auto">
                             <Link
-                                href="https://wa.me/34600877977" //**PONER WHATSSAP
+                                href="https://wa.me/34600877977?text=Hola%20Celda%20Barber,%20me%20gustaría%20pedir%20cita." //**PONER WHATSSAP
                                 target="_blank"
                                 className="group w-full sm:w-auto relative overflow-hidden rounded-xl bg-violet-600 px-8 py-4 text-white transition-all hover:bg-violet-500 hover:shadow-lg hover:shadow-violet-500/25 active:scale-95"
                             >
@@ -142,13 +142,10 @@ const Hero = () => {
                             ref={imageRef}
                             className="relative aspect-3/4 rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900 shadow-2xl shadow-black/50"
                         >
-                            <Image
+                            <img
                                 src="/images/hero-celdabarber.svg"
-                                // Alt Text SEO Optimizada
                                 alt="Peluquería masculina y barbería en Silla especializada en Fades y cortes modernos"
-                                fill
-                                className="object-cover"
-                                priority
+                                className="object-cover w-full h-full"
                             />
 
                             {/* Overlay */}

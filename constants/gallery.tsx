@@ -1,57 +1,61 @@
-interface GalleryImage {
+// hectorceldadev/barberia-urbana/barberia-urbana-4ba133f6e1f2c310b15b499bda3c8309d334fabe/constants/gallery.tsx
+
+export interface GaleriaProps {
   id: string;
   src: string; 
   alt: string; 
-  category: 'peluqueria' | 'uñas' | 'facial' | 'corporal' | 'spa' | 'general';
+  // He actualizado las categorías para que encajen con Celda Barber
+  category: 'corte' | 'barba' | 'freestyle' | 'local';
 }
 
-export const GALLERY_IMAGES: GalleryImage[] = [
+export const GALERIA: GaleriaProps[] = [
   {
     id: 'img1',
-    src: '/images/gallery/Mechas-balayage-rubias.webp',
-    alt: 'Mechas balayage rubias y naturales en cabello largo, realizadas en Aura Estética Valladolid.',
-    category: 'peluqueria',
+    // Usaremos rutas provisionales, luego subiremos tus fotos reales
+    src: '/images/galeria/1.svg',
+    alt: 'Corte Low Fade con texturizado superior estilo urbano en Silla.',
+    category: 'corte',
   },
   {
     id: 'img2',
-    src: '/images/gallery/tratamiento-facial.webp',
-    alt: 'Mujer recibiendo tratamiento facial anti-edad con productos orgánicos en Aura Estética.',
-    category: 'facial',
-  },
-  {
-    id: 'img3',
-    src: '/images/gallery/Manicura-francesa-clásica.webp',
-    alt: 'Manicura francesa clásica con esmalte semipermanente, realizada por profesional en Valladolid.',
-    category: 'uñas',
+    src: '/images/galeria/2.svg',
+    alt: 'Arreglo de barba perfilada a navaja con toalla caliente.',
+    category: 'corte',
   },
   {
     id: 'img4',
-    src: '/images/gallery/corte-de-pelo-con-volumen.webp',
-    alt: 'Corte de pelo moderno y con volumen en cabello castaño, realizado con precisión en salón de belleza.',
-    category: 'peluqueria',
+    src: '/images/galeria/3.svg',
+    alt: 'Corte French Crop con mucha textura y acabado mate.',
+    category: 'corte',
   },
   {
     id: 'img5',
-    src: '/images/gallery/Masaje-relajante.webp',
-    alt: 'Masaje relajante de espalda con aceites esenciales, proporcionando bienestar y alivio del estrés.',
-    category: 'corporal',
+    src: '/images/galeria/4.svg',
+    alt: 'Ambiente de la barbería Celda Barber, estilo industrial y urbano.',
+    category: 'corte',
   },
   {
     id: 'img6',
-    src: '/images/gallery/Limpieza-facial.webp',
-    alt: 'Limpieza facial profunda y purificante para una piel radiante, en un ambiente de spa.',
-    category: 'facial',
+    src: '/images/galeria/5.svg',
+    alt: 'Mullet moderno desvanecido en patillas, tendencia actual.',
+    category: 'corte',
   },
   {
     id: 'img7',
-    src: '/images/gallery/Pedicura-spa.webp',
-    alt: 'Pedicura spa con esmaltado de uñas, relajación y cuidado completo para los pies.',
-    category: 'uñas',
+    src: '/images/galeria/6.svg',
+    alt: 'Ritual de afeitado clásico con productos de primera calidad.',
+    category: 'corte',
+  },
+  {
+    id: 'img3',
+    src: '/images/galeria/7.svg',
+    alt: 'Taper Fade limpio para un look natural y elegante.',
+    category: 'corte',
   },
   {
     id: 'img8',
-    src: '/images/gallery/salón-belleza.webp',
-    alt: 'Interior moderno y acogedor de salón de belleza Aura Estética en Valladolid, con luz natural.',
-    category: 'general',
+    src: '/images/galeria/8.svg',
+    alt: 'Diseño freestyle con líneas geométricas en lateral.',
+    category: 'corte',
   }
-]
+];

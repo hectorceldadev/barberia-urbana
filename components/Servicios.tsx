@@ -1,54 +1,15 @@
 'use client'
 
 import { useRef } from 'react'
-import { Scissors, Zap, Ruler, Crown, Check, ArrowRight } from 'lucide-react'
+import { Check, ArrowRight } from 'lucide-react'
 import { useGSAP } from "@gsap/react"
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { anton, geist } from "@/constants/tipography"
+import { anton } from "@/constants/tipography"
 import Link from 'next/link'
+import { SERVICES } from '@/constants/services'
 
 gsap.registerPlugin(ScrollTrigger)
-
-// DATOS DE SERVICIOS (SEO OPTIMIZADO)
-const SERVICES = [
-    {
-        id: "01",
-        title: "Corte Urban & Fade",
-        description: "Dominamos todas las técnicas: Taper Fade, Low Fade, Mullet o texturizados modernos (Cropped) con un acabado pulido y contornos definidos a navaja.",
-        price: "7€", // Ajusta tus precios reales
-        icon: <Scissors className="w-6 h-6" />,
-        features: ["Asesoramiento de imagen", "Peinado con cera/polvo"],
-        slug: 'corte'
-    },
-    {
-        id: "02",
-        title: "Barba & Perfilado",
-        description: "Más que un afeitado, perfilado geométrico o natural según tu facción a navaja y arreglo de volúmenes.",
-        price: "+3€",
-        icon: <Crown className="w-6 h-6" />,
-        features: ["Perfilado a navaja", "Hidratación"],
-        slug: 'arreglo-de-barba'
-    },
-    {
-        id: "03",
-        title: "Cejas",
-        description: "Limpieza y perfilado de cejas masculino. Desde un acabado natural con navaja hasta los (cortes) más agresivos.",
-        price: "+1€",
-        icon: <Zap className="w-6 h-6" />,
-        features: ["Ahorras dinero", "Servicio VIP"],
-        slug: 'cejas'
-    },
-    {
-        id: "04",
-        title: "Diseños",
-        description: "Añade personalidad a tu corte. Rayas, tribales, zetas o diseños complejos a mano alzada. Tú pones la idea, nosotros la técnica.",
-        price: "+3€",
-        icon: <Ruler className="w-6 h-6" />,
-        features: ["Líneas nítidas", "Diseño único"],
-        slug: 'diseños'
-    }
-]
 
 const Servicios = () => {
     const containerRef = useRef(null)
@@ -124,8 +85,8 @@ const Servicios = () => {
             <div className="max-w-7xl mx-auto px-5 lg:px-10 relative z-10 pt-10">
 
                 <div className="mb-16">
-                    <h2 className={`${anton.className} text-4xl sm:text-5xl text-white uppercase mb-4 services-header`}>
-                        Nuestros <span className="text-violet-500">Servicios</span>
+                    <h2 className={`${anton.className} text-[42px] md:text-5xl text-white uppercase mb-4 services-header`}>
+                        Nuestros <br /><span className="text-violet-500">Servicios</span>
                     </h2>
                     <p className="text-zinc-400 max-w-md text-sm sm:text-base font-medium services-header">
                         No hacemos cortes estándar. Analizamos tu cráneo y facciones para darte el estilo que mejor te sienta. Precisión milimétrica.
@@ -173,14 +134,17 @@ const Servicios = () => {
                                 </p>
 
                                 {/* Lista de características (Checklist) */}
-                                <ul className="mt-auto space-y-2">
-                                    {service.features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-center gap-2 text-xs font-semibold text-zinc-500 group-hover:text-zinc-300 transition-colors">
-                                            <Check className="w-3.5 h-3.5 text-violet-500" />
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
+                                <div className='mt-auto flex justify-between items-center'>
+                                    <ul className="space-y-2">
+                                        {service.features.map((feature, idx) => (
+                                            <li key={idx} className="flex items-center gap-2 text-xs font-semibold text-zinc-500 group-hover:text-zinc-300 transition-colors">
+                                                <Check className="w-3.5 h-3.5 text-violet-500" />
+                                                {feature}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <ArrowRight className='group-hover:text-violet-500 group-hover:translate-x-2 transition-all duration-300' />
+                                </div>
                             </div>
                         </Link>
                     ))}

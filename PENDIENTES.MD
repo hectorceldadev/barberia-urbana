@@ -6,5 +6,3 @@ SCHEMA
 - _Coordenadas_
 - _Horario_
 
-HEADER
-- _Rediseñar servicios desplegables_

@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ChevronDown, Menu, X, ArrowRight, CalendarDays } from 'lucide-react'
-import { SERVICES_BY_CATEGORY } from '@/constants/services'
+import { ChevronDown, Menu, X, ArrowRight, CalendarDays, ArrowUpRight } from 'lucide-react'
+import { SERVICES, SERVICES_BY_POSITION } from '@/constants/services'
 
 // GSAP Imports
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -128,36 +128,50 @@ export default function Navbar() {
 
                 {/* Mega-Menu Desktop */}
                 <div className={`
-                  absolute top-[80%] left-1/2 -translate-x-1/2 w-160 lg:w-200
-                  bg-white border border-gray-100 rounded-4xl shadow-2xl shadow-violet-500/10 
-                  p-8 transition-all duration-300 origin-top z-50
+                  absolute top-[85%] left-1/2 -translate-x-1/2 w-[40rem] lg:w-[50rem]
+                  bg-[#0a0a0a] border border-white/10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] 
+                  p-1 transition-all duration-300 origin-top z-50 overflow-hidden
                   ${isServicesOpen ? 'opacity-100 visible scale-100 translate-y-0' : 'opacity-0 invisible scale-95 -translate-y-2'}
                 `}>
-                  <div className="grid grid-cols-2 gap-10">
-                    {Object.entries(SERVICES_BY_CATEGORY).map(([category, services]) => (
-                      <div key={category}>
-                        <h3 className="text-[10px] uppercase tracking-[0.2em] text-violet-400 font-black mb-6">
-                          {category}
-                        </h3>
-                        <ul className="space-y-4">
+                  {/* Contenedor interno con padding */}
+                  <div className="p-6 relative">
+                    {/* Decoración de fondo */}
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-violet-600/10 blur-[50px] rounded-full pointer-events-none" />
+
+                    <div className="grid grid-cols-2 gap-x-8 gap-y-6 relative z-10">
+                      {Object.entries(SERVICES_BY_POSITION).map(([position, services]) => (
+                        <div key={position} className="flex flex-col gap-2">
+                          {/* Etiqueta de columna opcional, si quisieras ponerla */}
                           {services.map((service) => (
-                            <li key={service.slug} className="desktop-service-item"> {/* Clase para animación */}
-                              <Link
+                             <Link
+                                key={service.slug}
                                 href={`/servicios/${service.slug}`}
-                                className="group/item flex items-center gap-4 text-sm text-gray-600 hover:text-violet-600 transition-colors"
+                                className="desktop-service-item group relative flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 border border-transparent hover:border-white/5 transition-all duration-300"
                               >
-                                <div className="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center group-hover/item:bg-violet-50 group-hover/item:text-violet-600 transition-all">
+                                {/* Icono */}
+                                <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-violet-400 group-hover:bg-violet-500/10 group-hover:border-violet-500/20 transition-all">
                                   {service.icon}
                                 </div>
-                                <span className="font-medium">{service.title}</span>
+                                
+                                {/* Textos */}
+                                <div className="flex-1">
+                                  <h4 className={`text-white text-lg leading-none mb-1 group-hover:text-violet-300 transition-colors uppercase tracking-tight ${anton.className}`}>
+                                    {service.title}
+                                  </h4>
+                                  <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider group-hover:text-zinc-400">
+                                    Reservar Cita
+                                  </span>
+                                </div>
+
+                                {/* Flecha hover */}
+                                <ArrowUpRight className="w-4 h-4 text-zinc-600 group-hover:text-violet-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                               </Link>
-                            </li>
                           ))}
-                        </ul>
-                      </div>
-                    ))}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <Link href="/servicios" className="desktop-service-item block mt-8 pt-6 border-t border-gray-50 text-center text-xs font-bold text-gray-400 hover:text-violet-600 uppercase tracking-[0.2em] transition-colors">
+                  <Link href="/servicios" className="desktop-service-item block py-4 border-t border-white/20 text-center text-xs font-bold text-zinc-200 hover:text-violet-500 uppercase tracking-[0.2em] transition-colors">
                     Ver carta completa →
                   </Link>
                 </div>
@@ -215,7 +229,7 @@ export default function Navbar() {
                 Nuestros Servicios
               </p>
               <div className="grid grid-cols-1 gap-4">
-                {Object.values(SERVICES_BY_CATEGORY).flat().slice(0, 4).map((service) => (
+                {SERVICES.map((service) => (
                   <Link
                     key={service.slug}
                     href={`/servicios/${service.slug}`}

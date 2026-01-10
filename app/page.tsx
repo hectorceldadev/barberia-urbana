@@ -1,5 +1,7 @@
+import { Contacto } from "@/components/Contacto";
 import Galeria from "@/components/Galeria";
 import Hero from "@/components/Hero";
+import { Reviews } from "@/components/Reviews";
 import Servicios from "@/components/Servicios";
 
 // 1. METADATA: La cara visible en Google
@@ -8,28 +10,28 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   // TÍTULO: Branding + Palabra Clave Principal (Peluquería/Barbería) + Ubicación + Gancho
   title: "Celda Barber | Peluquería y Barbería en Silla - Fades & Cortes Urbanos",
-  
+
   // DESCRIPCIÓN: Atacamos la intención de búsqueda y los pueblos vecinos
   description: "La nueva referencia de peluquería masculina en Silla (Valencia). Especialistas en degradados (fades), arreglo de barba y diseños freestyle. Tu espacio de confianza a 5 min de Picassent, Albal y Catarroja.",
-  
+
   // KEYWORDS: Etiquetas para ayudar (aunque Google ya lee el texto, esto suma)
   keywords: [
-    "Barbería Silla", 
-    "Peluquería hombre Silla", 
-    "Peluquería hombre Catarroja", 
-    "Peluquería hombre Albal", 
-    "Peluquería hombre Picasssent", 
-    "Peluquería Silla", 
-    "Peluquería Catarroja", 
-    "Peluquería Albal", 
-    "Peluquería Picasssent", 
-    "Cortes de pelo modernos Valencia", 
-    "Mejor degradado Silla", 
-    "Barbero cerca de Picassent", 
+    "Barbería Silla",
+    "Peluquería hombre Silla",
+    "Peluquería hombre Catarroja",
+    "Peluquería hombre Albal",
+    "Peluquería hombre Picasssent",
+    "Peluquería Silla",
+    "Peluquería Catarroja",
+    "Peluquería Albal",
+    "Peluquería Picasssent",
+    "Cortes de pelo modernos Valencia",
+    "Mejor degradado Silla",
+    "Barbero cerca de Picassent",
     "Barbero cerca de Albal",
     "Celda Barber"
   ],
-  
+
   // OPEN GRAPH: Cómo se ve cuando compartes el enlace por WhatsApp o Instagram
   openGraph: {
     title: "Celda Barber | Tu Estilo Urbano en Silla",
@@ -40,17 +42,16 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/og-image.jpg", // ⚠️ Tienes que crear una imagen de 1200x630px y ponerla en public/images
+        url: "/images/logo-celdabarber.svg", 
         width: 1200,
         height: 630,
         alt: "Celda Barber - Barbería en Silla",
       },
     ],
   },
-  
-  // ICONOS: Asegúrate de tener el favicon
+
   icons: {
-    icon: "/favicon.ico",
+    icon: "/images/logo-celdabarber.svg",
   },
 };
 
@@ -74,8 +75,8 @@ const jsonLd = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 39.3626, // Coordenadas aproximadas de Silla (Ajústalas exactas con Google Maps si puedes)
-    "longitude": -0.4125
+    "latitude": 39.358865,
+    "longitude": -0.413265
   },
   "areaServed": [
     { "@type": "City", "name": "Silla" },
@@ -115,15 +116,17 @@ export default function page() {
         className="absolute inset-0 z-10"
         style={{
           backgroundImage: `
-        linear-gradient(to right, rgba(100,116,139,0.3) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(100,116,139,0.3) 1px, transparent 1px)
-      `,
+            linear-gradient(to right, rgba(100,116,139,0.3) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(100,116,139,0.3) 1px, transparent 1px)
+          `,
           backgroundSize: "35px 35px",
         }}
       />
       <Hero />
       <Servicios />
       <Galeria />
+      <Reviews />
+      <Contacto />
     </div>
   )
 }
