@@ -117,7 +117,6 @@ const Galeria = () => {
                                         src={imagen.src}
                                         alt={imagen.alt}
                                         fill
-                                        unoptimized 
                                         className="object-cover transition-transform duration-700 grayscale group-hover:grayscale-0 group-hover:scale-110"
                                         sizes="(max-width: 768px) 100vw, 300px"
                                     />

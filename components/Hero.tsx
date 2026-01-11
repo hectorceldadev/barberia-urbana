@@ -66,7 +66,7 @@ const Hero = () => {
             className={`pt-28 pb-16 px-5 lg:px-10 overflow-hidden ${geist?.className || ''}`}
         >
             {/* Background Accent */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-100 bg-violet-600/15 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-100 bg-violet-600/15 rounded-full blur-2xl pointer-events-none" />
 
             <div className="relative z-10 max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -154,7 +154,7 @@ const Hero = () => {
                                 src="/images/sobre-nosotros.webp"
                                 alt="Peluquería masculina y barbería en Silla especializada en Fades y cortes modernos"
                                 fill
-                                unoptimized
+                                priority
                                 className="object-cover"
                             />
 

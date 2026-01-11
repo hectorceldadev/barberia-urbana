@@ -220,7 +220,6 @@ export const SobreNosotros = () => {
                                 src="/images/sobre-nosotros.webp"
                                 alt="Interior de Celda Barber"
                                 fill
-                                unoptimized
                                 className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                             />
                             {/* Overlay degradado */}
@@ -280,7 +279,6 @@ export const SobreNosotros = () => {
                                         src={member.image}
                                         alt={member.name}
                                         fill
-                                        unoptimized
                                         className="object-cover transition-all duration-500"
                                     />
 
