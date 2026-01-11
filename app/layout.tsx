@@ -1,8 +1,8 @@
 import "./globals.css";
 import Navbar from "@/components/Header";
 import { Footer } from "@/components/Footer";
-
 import type { Metadata } from "next";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://celdabarber.es'),
@@ -106,16 +106,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body
-        className={`antialiased`}
-      >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <body className={`antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Navbar />
         {children}
         <Footer />
+        
+        {/* 2. AQUÍ ESTÁ TU CÓDIGO CONECTADO */}
+        <GoogleAnalytics gaId="G-L4NS4FBFYE" />
       </body>
     </html>
   );
