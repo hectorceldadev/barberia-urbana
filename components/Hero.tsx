@@ -148,7 +148,7 @@ const Hero = () => {
 
                         <div
                             ref={imageRef}
-                            className="relative aspect-3/4 rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900 shadow-2xl shadow-black/50 animate-hero-image"
+                            className="relative aspect-3/4 rounded-2xl overflow-hidden grayscale border border-zinc-700 bg-zinc-900 shadow-2xl shadow-black/50 animate-hero-image"
                         >
                             <Image
                                 src="/images/sobre-nosotros.webp"

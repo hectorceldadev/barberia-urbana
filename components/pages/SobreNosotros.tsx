@@ -217,7 +217,7 @@ export const SobreNosotros = () => {
                         {/* Centramos la imagen horizontalmente en su columna */}
                         <div className="relative aspect-4/5 w-[90%] md:w-[70%] mx-auto rounded-3xl overflow-hidden border border-white/10 group">
                             <Image
-                                src="/images/sobre-nosotros.svg"
+                                src="/images/sobre-nosotros.webp"
                                 alt="Interior de Celda Barber"
                                 fill
                                 unoptimized
