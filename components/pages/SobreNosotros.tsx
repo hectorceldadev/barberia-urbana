@@ -16,7 +16,7 @@ const TEAM = [
         id: 1,
         name: "Álvaro Celda",
         role: "Founder & CEO",
-        image: "/images/alvaro.svg",
+        image: "/images/alvaro.webp",
     }
 ]
 
@@ -275,13 +275,13 @@ export const SobreNosotros = () => {
                             <div key={member.id} className="group col-span-1 flex justify-center items-center relative">
 
                                 {/* CORRECCIÓN AQUÍ: Añadido 'w-72' (o w-full) para móvil */}
-                                <div className="aspect-2/3 w-72 md:w-[30%] relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 animate-crew">
+                                <div className="aspect-2/3 w-72 md:w-[30%] grayscale group-hover:grayscale-0 group-hover:scale-105 cursor-pointer relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 animate-crew">
                                     <Image
                                         src={member.image}
                                         alt={member.name}
                                         fill
                                         unoptimized
-                                        className="object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
+                                        className="object-cover transition-all duration-500"
                                     />
 
                                     {/* Info Overlay */}

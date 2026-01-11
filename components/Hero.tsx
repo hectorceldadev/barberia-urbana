@@ -151,7 +151,7 @@ const Hero = () => {
                             className="relative aspect-3/4 rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900 shadow-2xl shadow-black/50 animate-hero-image"
                         >
                             <Image
-                                src="/images/hero-celdabarber.svg"
+                                src="/images/sobre-nosotros.webp"
                                 alt="Peluquería masculina y barbería en Silla especializada en Fades y cortes modernos"
                                 fill
                                 unoptimized

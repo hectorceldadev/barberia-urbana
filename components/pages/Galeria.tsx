@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useState } from "react"
-import { GALERIA } from "@/constants/gallery"
+import { GALERIA, GaleriaProps } from "@/constants/gallery"
 import { anton } from "@/constants/tipography"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
@@ -18,7 +18,7 @@ const MarqueeRow = ({
     speed = 20, 
     isPaused 
 }: { 
-    items: any[], 
+    items: GaleriaProps[], 
     direction?: "left" | "right", 
     speed?: number, 
     isPaused: boolean 
