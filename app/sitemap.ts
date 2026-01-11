@@ -45,6 +45,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7, 
   }))
 
-  // 3. Devolvemos la combinación de ambas listas
   return [...staticRoutes, ...serviceRoutes]
 }

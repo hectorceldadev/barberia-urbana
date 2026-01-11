@@ -125,11 +125,10 @@ export const SobreNosotros = () => {
             "mainEntity": { // 2. La entidad principal de esta página es tu negocio
             "@type": "HairSalon",
             "name": "Celda Barber",
-            "image": "https://celdabarber.com/images/og-image.jpg",
-            "@id": "https://celdabarber.com", // ID único del negocio
-            "url": "https://celdabarber.com", // La web oficial es la home
+            "image": "https://celdabarber.es/images/og-image.jpg",
+            "@id": "https://celdabarber.es",
+            "url": "https://celdabarber.es",
             "telephone": "+34600877977",
-            "email": "info@celdabarber.com", // Añadido email si lo tienes
             "priceRange": "€€",
             "address": {
                 "@type": "PostalAddress",

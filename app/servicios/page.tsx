@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Carta de Servicios | Celda Barber",
         description: "No hacemos cortes estándar. Revisa nuestras tarifas de Fades, Barbas y Diseños.",
-        url: 'https://celdabarber.com/servicios',
+        url: 'https://celdabarber.es/servicios',
         images: [
             {
                 url: '/images/twitter-card.png', // Idealmente una foto de alguien cortando el pelo o la lista de precios

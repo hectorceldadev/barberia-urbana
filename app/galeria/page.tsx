@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Galería Visual | Celda Barber",
     description: "Inspiración pura. Mira nuestros últimos trabajos y encuentra tu próximo look.",
-    url: 'https://celdabarber.com/galeria',
+    url: 'https://celdabarber.es/galeria',
     images: [
       {
         url: '/images/twitter-card.png',

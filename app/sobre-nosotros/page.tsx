@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Celda Barber | Conoce al Equipo",
     description: "Más que una barbería. Descubre quién hay detrás de las navajas en Silla.",
-    url: 'https://celdabarber.com/sobre-nosotros',
+    url: 'https://celdabarber.es/sobre-nosotros',
     images: [
       {
         url: '/images/twitter-card.png', // Idealmente una foto de grupo o de Álvaro

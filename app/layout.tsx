@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Celda Barber | Tu Estilo Urbano en Silla",
     description: "Cortes Fades, arreglos de barba y el mejor ambiente. Reserva tu cita en Silla.",
-    url: "https://celdabarber.com", // ⚠️ CAMBIA ESTO POR TU DOMINIO REAL CUANDO LO TENGAS
+    url: "https://celdabarber.es", 
     siteName: "Celda Barber",
     locale: "es_ES",
     type: "website",
@@ -50,22 +50,21 @@ export const metadata: Metadata = {
 
 };
 
-// 2. SCHEMA MARKUP: El DNI del negocio para Google Maps
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "HairSalon", // Google sabe que cortas pelo
+  "@type": "HairSalon", 
   "name": "Celda Barber",
-  "image": "https://celdabarber.com/images/gallery/salón-belleza.webp", // Usa una foto real tuya
-  "@id": "https://celdabarber.com",
-  "url": "https://celdabarber.com",
+  "image": "https://celdabarber.es/images/sobre-nosotros.webp",
+  "@id": "https://celdabarber.es",
+  "url": "https://celdabarber.es",
   "telephone": "+34600877977",
-  "priceRange": "€€", // Indica precio medio
+  "priceRange": "€€", 
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Avenida Luis Vives 14",
     "addressLocality": "Silla",
     "addressRegion": "Valencia",
-    "postalCode": "46460", // Código postal de Silla
+    "postalCode": "46460", 
     "addressCountry": "ES"
   },
   "geo": {
@@ -86,7 +85,7 @@ const jsonLd = {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       "opens": "10:00",
-      "closes": "20:00" //** */ ⚠️ PONER HORARIO
+      "closes": "20:00" 
     },
     {
       "@type": "OpeningHoursSpecification",
@@ -96,7 +95,7 @@ const jsonLd = {
     }
   ],
   "sameAs": [
-    "https://instagram.com/celdabarber" // ⚠️ Pon tu Instagram real aquí
+    "https://instagram.com/celdabarber" 
   ]
 };
 

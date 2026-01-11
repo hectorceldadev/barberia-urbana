@@ -16,18 +16,16 @@ export const Contacto = () => {
 
     const jsonLD = {
         "@context": "https://schema.org",
-        "@type": "ContactPage", // 1. Definimos que esta PÁGINA es de contacto
+        "@type": "ContactPage", 
         "name": "Contacto y Citas - Celda Barber",
         "description": "Información de contacto, ubicación y horarios de Celda Barber en Silla.",
-        "url": "https://celdabarber.com/contacto",
-        "mainEntity": { // 2. La entidad principal de esta página es tu negocio
+        "url": "https://celdabarber.es/contacto",
+        "mainEntity": { 
             "@type": "HairSalon",
             "name": "Celda Barber",
-            "image": "https://celdabarber.com/images/og-image.jpg",
-            "@id": "https://celdabarber.com", // ID único del negocio
-            "url": "https://celdabarber.com", // La web oficial es la home
+            "@id": "https://celdabarber.es",
+            "url": "https://celdabarber.es",
             "telephone": "+34600877977",
-            "email": "info@celdabarber.com", // Añadido email si lo tienes
             "priceRange": "€€",
             "address": {
                 "@type": "PostalAddress",

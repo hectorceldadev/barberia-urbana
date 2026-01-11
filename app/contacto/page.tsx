@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Contacto - Celda Barber",
         description: "Reserva tu hueco. Estamos en el corazón de Silla (Valencia).",
-        url: 'https://celdabarber.com/contacto',
+        url: 'https://celdabarber.es/contacto',
         images: [
             {
                 url: '/images/twitter-card.png',
